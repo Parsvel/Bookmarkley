@@ -1,1 +1,1 @@
-javascript: (function () { var script = document.createElement('script'); script.src = 'https://void.cubestudios.ml/gamecontent/sitehack/hack.js'; document.body.appendChild(script); }())
+javascript: (function () { var script = document.createElement('script'); script.src = 'https://raw.githubusercontent.com/CleverCarpet/Bookmarkley/main/script.js'; document.body.appendChild(script); }())
