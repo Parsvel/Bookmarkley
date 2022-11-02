@@ -8,9 +8,9 @@
 </h1>
 
 <h4 align="center">
-  <a href="https://docs.medusajs.com">Tools</a> |
-  <a href="https://demo.medusajs.com/">Contributors</a> |
-  <a href="https://www.medusajs.com">Website</a>
+  <a href="https://bookmarkley.netlify.app/#features">Features</a> |
+  <a href="https://bookmarkley.netlify.app/contributors">Contributors</a> |
+  <a href="https://bookmarkley.netlify.app/">Website</a>
 </h4>
 
 <p align="center">
@@ -35,7 +35,7 @@ You can install Bookmarkley with the following steps:
 
 Bookmarkley is a bookmarklet script that uses gives users a UI for a library of bookmarkets that allow users to modify and control the content on about any webpage.
 
-You can learn more about [how Bookmarkley works on our Documentation](https://void.cubestudios.ml/game/sitehack).
+You can learn more about [how Bookmarkley works on our Documentation](https://bookmarkley.netlify.app/documentation).
 
 ### Features
 
@@ -43,7 +43,7 @@ You can learn more about [how Bookmarkley works on our Documentation](https://vo
 - **Takeover:** Completley takesover the website and installs a script to change the website content onload.
 - **Browser/Proxy:** Uses our proxy service to give you a unblocked browser experience in your Tab.
 
-See more of the [bookmarklets on our Documentation](https://void.cubestudios.ml/game/sitehack).
+See more of the [bookmarklets on our Documentation](https://bookmarkley.netlify.app/documentation).
 
 ## Roadmap
 
