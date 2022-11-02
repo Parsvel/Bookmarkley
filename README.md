@@ -35,7 +35,7 @@ You can install Bookmarkley with the following steps:
 
 Bookmarkley is a bookmarklet script that uses gives users a UI for a library of bookmarkets that allow users to modify and control the content on about any webpage.
 
-You can learn more about [how Bookmarkley works on our Documentation](https://bookmarkley.netlify.app/documentation).
+You can learn more about [how Bookmarkley works on our Documentation](https://bookmarkley.netlify.app/#how-it-works).
 
 ### Features
 
