@@ -190,7 +190,8 @@
                     <h3>Instalation</h3>
                     <p>All you have to do to install Bookmarkley is just add the bookmark and your all set! Bookmarkley
                         is just a bookmark with a script so when you use it, it injects the script into the webpage and
-                        modifys the page content. This is temporary and will go away when you refresh it. </p>
+                        modifys the page content. This is temporary and will go away when you refresh it. <a data-bs-toggle="collapse" href="#installExample" role="button" aria-expanded="false"
+                            aria-controls="installExample"> Show Me How </a> </p>
                     <div class="card">
                         <div class="card-header">
                             Creating the Bookmark
@@ -204,6 +205,18 @@
                                         href="javascript:(function () { var script = document.createElement('script'); script.src = 'https://void.cubestudios.ml/gamecontent/sitehack/hack.js'; document.body.appendChild(script); }())">Bookmarkley</a>
                                 </div>
                             </div>
+                            <p>
+                        </div>
+                    </div>
+                    <br>
+                    <div class="collapse" id="installExample">
+                        <div class="card card-body">
+                            <div class="card text-bg-dark">
+                                <img src="installdemo.gif" class="card-img" alt="...">
+                                <div class="card-img-overlay">
+                                    <h5 class="card-title">Demo</h5>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -212,7 +225,8 @@
                     <p>Lets personalize Bookmarkley to suit you. Personalizing Bookmarkley looks a lot different than
                         other software/extensions. To personalize Bookmarkley, we are gonna use a tool we made to
                         generate a bookmark for you. Since Bookmarkley isn't installed locally, we store your settings
-                        in the script so every time you use it, it loads your configuration when loading the script.</p>
+                        in the script so every time you use it, it loads your configuration when loading the script. <a data-bs-toggle="collapse" href="#scriptExample" role="button" aria-expanded="false" aria-controls="scriptExample">
+                            Show Me How </a></p>
                     <div class="card">
                         <div class="card-header">
                             Generating your custom Bookmarkley Script
@@ -271,6 +285,17 @@
                                     document.getElementById('customURLInput').value = "javascript:(function () { var script = document.createElement('script'); script.src = '" + newurl + "'; document.body.appendChild(script); }())"
                                 }
                             </script>
+                        </div>
+                    </div>
+                    <br>
+                    <div class="collapse" id="scriptExample">
+                        <div class="card card-body">
+                            <div class="card text-bg-dark">
+                                <img src="scriptdemo.gif" class="card-img" alt="...">
+                                <div class="card-img-overlay">
+                                    <h5 class="card-title">Demo</h5>
+                                </div>
+                            </div>
                         </div>
                     </div>
                     <br>
