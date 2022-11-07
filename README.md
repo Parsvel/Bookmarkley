@@ -1,6 +1,6 @@
 <p align="center">
-  <a href="https://www.medusajs.com">
-    <img alt="Medusa" src="https://github.com/CleverCarpet/Bookmarkley/blob/main/icon864.png?raw=true" width="100" />
+  <a href="https://bookmarkley.netlify.app/">
+    <img alt="Bookmarkley" src="https://github.com/CleverCarpet/Bookmarkley/blob/main/icon864.png?raw=true" width="100" />
   </a>
 </p>
 <h1 align="center">
