@@ -31,6 +31,7 @@
         <h4>Tricks</h4>
         <div class="list-group">
             <button id="bkTrickTabCloak" type="button" class="list-group-item list-group-item-action">Tab Cloak</button>
+            <button id="bkTrickTabBrowser" type="button" class="list-group-item list-group-item-action">In-Tab Browers</button>
         </div>
 
         <br>
@@ -121,6 +122,10 @@
 
     document.getElementById('bkTrickTabCloak').onclick = function () {
         tabCloakModal.show()
+    }
+
+    document.getElementById('bkTrickTabBrowser').onclick = function () {
+        window.top.postMessage('trick|tabbrowser', '*')
     }
 
     document.getElementById('cloakTabButton').onclick = function () {
