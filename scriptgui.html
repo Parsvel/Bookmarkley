@@ -27,7 +27,7 @@
         </div>
     </nav>
 
-        <div style="padding:5%;">
+    <div style="padding:5%;">
         <h4>Tricks</h4>
         <div class="list-group">
             <button id="bkTrickTabCloak" type="button" class="list-group-item list-group-item-action">Tab Cloak</button>
@@ -67,11 +67,52 @@
             </div>
         </div>
     </div>
+
+    <div class="modal fade" id="tabCloakModal" tabindex="-1" aria-labelledby="tabCloakModal" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">Tab Cloak</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <button id="cloakTabBtn" type="button" class="btn btn-secondary">Cloak Tab</button>
+                    <button id="resetTabBtn" type="button" class="btn btn-secondary">Reset Tab</button>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
 </body>
 <script src="bootstrap.bundle.min.js"></script>
 <script>
+    const tabCloakModal = new bootstrap.Modal(document.getElementById('tabCloakModal'))
+    let ogTabName = ''
+
+    window.top.postMessage('rqdata|tabtitle', '*')
+
+    window.onmessage = function (e) {
+        let command = e.data.split('|')
+        if (command[0] == 'rqdata') {
+            if (command[1] == 'tabtitle') {
+                ogTabName = command[2]
+            }
+        }
+    };
+
     document.getElementById('bkTrickTabCloak').onclick = function () {
+        tabCloakModal.show()
+    }
+
+    document.getElementById('cloakTabButton').onclick = function () {
         window.top.postMessage('trick|tabcloak|hello world', '*')
     }
+
+    document.getElementById('resetTabButton').onclick = function () {
+            window.top.postMessage('trick|tabcloak|'+ogTabName, '*')
+        }
 </script>
+
 </html>
