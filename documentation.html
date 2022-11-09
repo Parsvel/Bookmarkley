@@ -234,9 +234,9 @@
                         <div class="card-body">
                             <p class="card-text">Select your options and then generate your script.</p>
                             <div style="margin-top:6px;margin-bottom:6px;" class="form-check">
-                                <input class="form-check-input" type="checkbox" value="" id="bkflags">
-                                <label class="form-check-label" for="bkflags">
-                                    Enable bookmarkley flags
+                                <input class="form-check-input" type="checkbox" value="" id="bklegacy">
+                                <label class="form-check-label" for="bklegacy">
+                                    Use legacy Bookmarkley (If GUI is blocked)
                                 </label>
                             </div>
                             <select id="bkChannel" style="padding-top:2px;padding-bottom:2px;margin-top:6px;margin-bottom:6px;"
@@ -264,10 +264,10 @@
                                 document.getElementById('generateBtn').onclick = function () {
                                     console.log(document.getElementById('bkChannel').value)
                                     let newurl = new URL("https://bookmarkley.clevercarpet.repl.co/hack.js")
-                                    if (document.getElementById('bkflags').checked == true) {
-                                        newurl.searchParams.append('bkflags', 'true');
+                                    if (document.getElementById('bklegacy').checked == true) {
+                                        newurl.searchParams.append('bklegacy', 'true');
                                     } else {
-                                        newurl.searchParams.append('bkflags', 'false');
+                                        newurl.searchParams.append('bklegacy', 'false');
                                     }
                                     newurl.searchParams.append('bkChannel', document.getElementById('bkChannel').value);
                                     document.getElementById('customURLInput').value = "javascript:(function () { var script = document.createElement('script'); script.src = '" + newurl + "'; document.body.appendChild(script); }())"
