@@ -17,5 +17,9 @@ window.onmessage = function (e) {
     if (command[1] == 'tabtitle') {
       document.getElementById('bkVCPiFrame').contentWindow.postMessage('rqdata|tabtitle|'+document.title, '*');
     }
+  } else if (command[0] == 'option') {
+    if (command[1] == 'exit') {
+      document.getElementById('bkVCPControlPanel').style.display = 'none'
+    }
   }
 };

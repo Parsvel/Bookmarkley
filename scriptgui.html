@@ -59,9 +59,9 @@
         <div class="offcanvas-body" style="padding: 5%;">
 
             <div class="list-group">
-                <button type="button" class="list-group-item list-group-item-action active" aria-current="true">
-                    Home
-                </button>
+                <a href="scriptgui.html" class="list-group-item list-group-item-action active" aria-current="true">Home</a>
+                <a href="options.html" class="list-group-item list-group-item-action">Options</a>
+                <button id="exitButton" type="button" class="list-group-item list-group-item-action">Exit</button>
             </div>
         </div>
     </div>
@@ -104,11 +104,31 @@
             </div>
         </div>
     </div>
+
+    <div class="modal fade" id="confirmExit" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">Are you sure?</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    Are you sure you want to exit Bookmarkley? To use Bookmarkley again you will have to refresh the page.
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button id="confirmExitButton" type="button" class="btn btn-primary"
+                        data-bs-dismiss="modal">Exit</button>
+                </div>
+            </div>
+        </div>
+    </div>
 </body>
 <script src="bootstrap.bundle.min.js"></script>
 <script>
     const tabCloakModal = new bootstrap.Modal(document.getElementById('tabCloakModal'))
     const tabCloakTitleModal = new bootstrap.Modal(document.getElementById('tabCloakTitleModal'))
+    const confirmExit = new bootstrap.Modal(document.getElementById('confirmExit'))
     let ogTabName = ''
 
     window.top.postMessage('rqdata|tabtitle', '*')
@@ -140,6 +160,14 @@
 
     document.getElementById('resetTabButton').onclick = function () {
         window.top.postMessage('trick|tabcloak|'+ogTabName, '*')
+    }
+
+    document.getElementById('exitButton').onclick = function () {
+       confirmExit.show()
+    }
+
+    document.getElementById('confirmExitButton').onclick = function () {
+        window.top.postMessage('option|exit', '*')
     }
 </script>
 
