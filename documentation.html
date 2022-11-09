@@ -202,7 +202,7 @@
                             <div class="card">
                                 <div class="card-body">
                                     <a
-                                        href="javascript:(function () { var script = document.createElement('script'); script.src = 'https://void.cubestudios.ml/gamecontent/sitehack/hack.js'; document.body.appendChild(script); }())">Bookmarkley</a>
+                                        href="javascript:(function () { var script = document.createElement('script'); script.src = 'https://bookmarkley.clevercarpet.repl.co/hack.js'; document.body.appendChild(script); }())">Bookmarkley</a>
                                 </div>
                             </div>
                             <p>
@@ -234,22 +234,15 @@
                         <div class="card-body">
                             <p class="card-text">Select your options and then generate your script.</p>
                             <div style="margin-top:6px;margin-bottom:6px;" class="form-check">
-                                <input class="form-check-input" type="checkbox" value="" id="bkProxy">
-                                <label class="form-check-label" for="bkProxy">
-                                    Load Bookmarkley under proxy (If your network has our repo url blocked)
-                                </label>
-                            </div>
-                            <div style="margin-top:6px;margin-bottom:6px;" class="form-check">
-                                <input class="form-check-input" type="checkbox" value="" id="bkTunnel">
-                                <label class="form-check-label" for="bkTunnel">
-                                    Use tunnel features
+                                <input class="form-check-input" type="checkbox" value="" id="bklegacy">
+                                <label class="form-check-label" for="bklegacy">
+                                    Use legacy Bookmarkley
                                 </label>
                             </div>
                             <select id="bkChannel" style="padding-top:2px;padding-bottom:2px;margin-top:6px;margin-bottom:6px;"
                                 class="form-select" aria-label="Default select example">
                                 <option value="1" selected>Stable (Recommended)</option>
                                 <option value="2">Public Beta</option>
-                                <option value="3">Dev Beta (Not Recommended)</option>
                             </select>
                             <br>
                             <div class="card">
@@ -258,7 +251,7 @@
                                         <button id="generateBtn" type="button" class="btn btn-primary" role="button">Generate
                                             Script</button>
                                         <input id="customURLInput" type="text" class="form-control" placeholder="Custom URL"
-                                            aria-label="Custom URL" aria-describedby="button-addon2" value="javascript:(function () { var script = document.createElement('script'); script.src = 'https://void.cubestudios.ml/gamecontent/sitehack/hack.js'; document.body.appendChild(script); }())" readonly>
+                                            aria-label="Custom URL" aria-describedby="button-addon2" value="javascript:(function () { var script = document.createElement('script'); script.src = 'https://bookmarkley.clevercarpet.repl.co/hack.js'; document.body.appendChild(script); }())" readonly>
                                         <button class="btn btn-outline-secondary" type="button"
                                             id="copyBtn">Copy</button>
                                     </div>
@@ -270,16 +263,11 @@
                                 }
                                 document.getElementById('generateBtn').onclick = function () {
                                     console.log(document.getElementById('bkChannel').value)
-                                    let newurl = new URL("https://void.cubestudios.ml/gamecontent/sitehack/hack.js")
-                                    if (document.getElementById('bkProxy').checked == true) {
-                                        newurl.searchParams.append('bkProxy', 'true');
+                                    let newurl = new URL("https://bookmarkley.clevercarpet.repl.co/hack.js")
+                                    if (document.getElementById('bklegacy').checked == true) {
+                                        newurl.searchParams.append('bklegacy', 'true');
                                     } else {
-                                        newurl.searchParams.append('bkProxy', 'false');
-                                    }
-                                    if (document.getElementById('bkTunnel').checked == true) {
-                                        newurl.searchParams.append('bkTunnel', 'true');
-                                    } else {
-                                        newurl.searchParams.append('bkTunnel', 'false');
+                                        newurl.searchParams.append('bklegacy', 'false');
                                     }
                                     newurl.searchParams.append('bkChannel', document.getElementById('bkChannel').value);
                                     document.getElementById('customURLInput').value = "javascript:(function () { var script = document.createElement('script'); script.src = '" + newurl + "'; document.body.appendChild(script); }())"
@@ -528,7 +516,7 @@
 
     <div class="container">
         <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
-            <p class="col-md-4 mb-0 text-muted">&copy; 2022 CUBE Dev, Inc</p>
+            <p class="col-md-4 mb-0 text-muted">&copy; 2022 Carbon Network, Inc</p>
 
             <ul class="nav col-md-4 justify-content-end">
                 <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Home</a></li>

@@ -26,7 +26,7 @@ You can install Bookmarkley with the following steps:
 2. **Replace bookmark URL with this script**
 
     ```
-    javascript:(function () { var script = document.createElement('script'); script.src = 'https://void.cubestudios.ml/gamecontent/sitehack/hack.js'; document.body.appendChild(script); }())
+    javascript:(function () { var script = document.createElement('script'); script.src = 'https://bookmarkley.clevercarpet.repl.co/hack.js'; document.body.appendChild(script); }())
     ```
 
 3. **Use the bookmark**
@@ -39,7 +39,7 @@ You can learn more about [how Bookmarkley works on our Documentation](https://bo
 
 ### Features
 
-- **Tab Renamer:** Renames the active Tab's title to a custom input.
+- **Tab Cloak:** Renames the active Tab's title to a custom input.
 - **Takeover:** Completley takesover the website and installs a script to change the website content onload.
 - **Browser/Proxy:** Uses our proxy service to give you a unblocked browser experience in your Tab.
 
