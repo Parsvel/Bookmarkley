@@ -116,7 +116,7 @@
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h1 class="modal-title fs-5" id="exampleModalLabel">Tab Cloak</h1>
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">Tab Unblocker</h1>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
@@ -158,12 +158,22 @@
             </div>
         </div>
     </div>
+
+    <div id="tabCloakToast" class="toast align-items-center" role="alert" aria-live="assertive" aria-atomic="true">
+        <div class="d-flex">
+            <div class="toast-body">
+                Tab Updated
+            </div>
+            <button type="button" class="btn-close me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
+        </div>
+    </div>
 </body>
 <script src="bootstrap.bundle.min.js"></script>
 <script>
     const tabCloakModal = new bootstrap.Modal(document.getElementById('tabCloakModal'))
     const tabCloakTitleModal = new bootstrap.Modal(document.getElementById('tabCloakTitleModal'))
     const unblockModal = new bootstrap.Modal(document.getElementById('unblockModal'))
+    const tabCloakToast = new bootstrap.Toast(document.getElementById('tabCloakToast'))
     const confirmExit = new bootstrap.Modal(document.getElementById('confirmExit'))
     let ogTabName = ''
 
@@ -179,6 +189,10 @@
                 document.getElementById('unblockLoader').style.display = 'none'
                 document.getElementById('unblockInput').style.display = 'block'
                 document.getElementById('setUnbURLButton').disabled = false
+            }
+        } else if (command[0] == 'trick') {
+            if (command[1] == 'tabcloak') {
+                tabCloakToast.show()
             }
         }
     };

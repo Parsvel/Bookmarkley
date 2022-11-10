@@ -18,6 +18,7 @@ window.onmessage = function (e) {
   if (command[0] == 'trick') {
     if (command[1] == 'tabcloak') {
       document.title = command[2]
+      document.getElementById('bkVCPiFrame').contentWindow.postMessage('trick|tabcloak', '*');
     } else if (command[1] == 'tabbrowser') {
       startTabBrowser()
     } else if (command[1] == 'unblock') {
