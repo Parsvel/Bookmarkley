@@ -133,7 +133,7 @@
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                    <button id="setUnbURLButton" type="button" class="btn btn-primary" data-bs-dismiss="modal">Unblock</button>
+                    <button id="setUnbURLButton" type="button" class="btn btn-primary" data-bs-dismiss="modal" disabled>Unblock</button>
                 </div>
             </div>
         </div>
@@ -177,6 +177,7 @@
                 document.getElementById('tabUrlInput').value = command[2]
                 document.getElementById('unblockLoader').style.display = 'none'
                 document.getElementById('unblockInput').style.display = 'block'
+                document.getElementById('setUnbURLButton').disabled = false
             }
         }
     };
