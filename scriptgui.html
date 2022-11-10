@@ -35,8 +35,10 @@
         <h4>Tricks</h4>
         <div class="list-group">
             <button id="bkTrickTabCloak" type="button" class="list-group-item list-group-item-action">Tab Cloak</button>
-            <button id="bkTrickTabBrowser" type="button" class="list-group-item list-group-item-action">In-Tab Brower</button>
-            <button id="bkTrickUnblockPage" type="button" class="list-group-item list-group-item-action">Unblock Page</button>
+            <button id="bkTrickTabBrowser" type="button" class="list-group-item list-group-item-action">In-Tab
+                Brower</button>
+            <button id="bkTrickUnblockPage" type="button" class="list-group-item list-group-item-action">Unblock
+                Page</button>
         </div>
 
         <br>
@@ -60,7 +62,8 @@
         <div class="offcanvas-body" style="padding: 5%;">
 
             <div class="list-group">
-                <a href="scriptgui.html" class="list-group-item list-group-item-action active" aria-current="true">Home</a>
+                <a href="scriptgui.html" class="list-group-item list-group-item-action active"
+                    aria-current="true">Home</a>
                 <a href="options.html" class="list-group-item list-group-item-action">Options</a>
                 <button id="exitButton" type="button" class="list-group-item list-group-item-action">Exit</button>
             </div>
@@ -85,7 +88,8 @@
         </div>
     </div>
 
-    <div class="modal fade" id="tabCloakTitleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal fade" id="tabCloakTitleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
@@ -100,7 +104,8 @@
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                    <button id="setTabCloakButton" type="button" class="btn btn-primary" data-bs-dismiss="modal">Cloak</button>
+                    <button id="setTabCloakButton" type="button" class="btn btn-primary"
+                        data-bs-dismiss="modal">Cloak</button>
                 </div>
             </div>
         </div>
@@ -114,7 +119,7 @@
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                    <div class="text-center d-grid gap-2 d-sm-flex justify-content-sm-center" id="unblockLoader">
+                    <div id="unblockLoader" class="text-center d-grid gap-2 d-sm-flex justify-content-sm-center">
                         <label class="form-label">Attempting to fetch URL</label>
                         <div class="spinner-border mx-auto" role="status" style="margin-top: 10px;margin-bottom: 10px;">
                             <span class="visually-hidden">Loading...</span>
@@ -125,12 +130,14 @@
                         <input type="text" class="form-control" id="tabUrlInput" aria-describedby="urlHelp">
                     </div>
                 </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                    <button id="setUnbURLButton" type="button" class="btn btn-primary" data-bs-dismiss="modal">Unblock</button>
-                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button id="setUnbURLButton" type="button" class="btn btn-primary"
+                    data-bs-dismiss="modal">Unblock</button>
             </div>
         </div>
+    </div>
     </div>
 
     <div class="modal fade" id="confirmExit" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -193,15 +200,15 @@
     }
 
     document.getElementById('setTabCloakButton').onclick = function () {
-        window.top.postMessage('trick|tabcloak|'+document.getElementById('tabTitleInput').value, '*')
+        window.top.postMessage('trick|tabcloak|' + document.getElementById('tabTitleInput').value, '*')
     }
 
     document.getElementById('resetTabButton').onclick = function () {
-        window.top.postMessage('trick|tabcloak|'+ogTabName, '*')
+        window.top.postMessage('trick|tabcloak|' + ogTabName, '*')
     }
 
     document.getElementById('exitButton').onclick = function () {
-       confirmExit.show()
+        confirmExit.show()
     }
 
     document.getElementById('confirmExitButton').onclick = function () {
