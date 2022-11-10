@@ -1,5 +1,9 @@
 //Inject Menu
-document.body.innerHTML = document.body.innerHTML +`<span id='bkVCPControlPanel'><style>.revokeallcss { all: none; }</style><link href="https://cdn.jsdelivr.net/npm/jspanel4@4.12.0/dist/jspanel.css" rel="stylesheet"><script src="https://cdn.jsdelivr.net/npm/jspanel4@4.12.0/dist/jspanel.js"></script><div style="z-index: 999 !important;position: absolute;max-width:325px;width: 325px; height: relative; position: fixed; top: 0; left: 5%;background-color: black;padding: 15px;"><iframe id="bkVCPiFrame" src="https://bookmarkley.netlify.app/scriptgui.html" sandbox="allow-scripts allow-popups allow-same-origin" height="500" width="320" title="Iframe Example"></iframe></div></span>`
+if (document.getElementById('bkVCPControlPanel') == undefined) {
+  document.body.innerHTML = document.body.innerHTML + `<span id='bkVCPControlPanel'><style>.revokeallcss { all: none; }</style><link href="https://cdn.jsdelivr.net/npm/jspanel4@4.12.0/dist/jspanel.css" rel="stylesheet"><script src="https://cdn.jsdelivr.net/npm/jspanel4@4.12.0/dist/jspanel.js"></script><div style="z-index: 999 !important;position: absolute;max-width:325px;width: 325px; height: relative; position: fixed; top: 0; left: 5%;background-color: black;padding: 15px;"><iframe id="bkVCPiFrame" src="https://bookmarkley.netlify.app/scriptgui.html" sandbox="allow-scripts allow-popups allow-same-origin" height="500" width="320" title="Iframe Example"></iframe></div></span>`
+} else {
+  document.getElementById('bkVCPControlPanel').style.display = 'block'
+}
 
 function startTabBrowser () {
   document.body.innerHTML = '<iframe id="bkVCPiFrame" src="https://void.clevercarpet.repl.co" sandbox="allow-scripts allow-popups allow-same-origin" style="position: fixed; top: 0px; bottom: 0px; right: 0px; width: 100%; border: none; margin: 0; padding: 0; overflow: hidden; z-index: 999999; height: 100%;" title="Iframe Example"></iframe>'
