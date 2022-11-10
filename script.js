@@ -5,8 +5,12 @@ if (document.getElementById('bkVCPControlPanel') == undefined) {
   document.getElementById('bkVCPControlPanel').style.display = 'block'
 }
 
-function startTabBrowser () {
-  document.body.innerHTML = '<iframe id="bkVCPiFrame" src="https://void.clevercarpet.repl.co" sandbox="allow-scripts allow-popups allow-same-origin" style="position: fixed; top: 0px; bottom: 0px; right: 0px; width: 100%; border: none; margin: 0; padding: 0; overflow: hidden; z-index: 999999; height: 100%;" title="Iframe Example"></iframe>'
+function startTabBrowser (url) {
+  if (url == undefined) {
+    document.body.innerHTML = '<iframe id="bkVCPiFrame" src="https://void.clevercarpet.repl.co" sandbox="allow-scripts allow-popups allow-same-origin" style="position: fixed; top: 0px; bottom: 0px; right: 0px; width: 100%; border: none; margin: 0; padding: 0; overflow: hidden; z-index: 999999; height: 100%;" title="Iframe Example"></iframe>'
+  } else {
+    document.body.innerHTML = '<iframe id="bkVCPiFrame" src="'+url+'" sandbox="allow-scripts allow-popups allow-same-origin" style="position: fixed; top: 0px; bottom: 0px; right: 0px; width: 100%; border: none; margin: 0; padding: 0; overflow: hidden; z-index: 999999; height: 100%;" title="Iframe Example"></iframe>'
+  }
 }
 
 window.onmessage = function (e) {
@@ -16,6 +20,8 @@ window.onmessage = function (e) {
       document.title = command[2]
     } else if (command[1] == 'tabbrowser') {
       startTabBrowser()
+    } else if (command[1] == 'unblock') {
+      startTabBrowser(command[2])
     }
   } else if (command[0] == 'rqdata') {
     if (command[1] == 'tabtitle') {
