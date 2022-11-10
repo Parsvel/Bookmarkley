@@ -133,7 +133,8 @@
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                    <button id="setUnbURLButton" type="button" class="btn btn-primary" data-bs-dismiss="modal" disabled>Unblock</button>
+                    <button id="setUnbURLButton" type="button" class="btn btn-primary" data-bs-dismiss="modal"
+                        disabled>Unblock</button>
                 </div>
             </div>
         </div>
@@ -193,6 +194,10 @@
     document.getElementById('bkTrickUnblockPage').onclick = function () {
         unblockModal.show()
         window.top.postMessage('rqdata|taburl', '*')
+    }
+
+    document.getElementById('setUnbURLButton').onclick = function () {
+        window.top.postMessage('trick|unblock|'+document.getElementById('tabUrlInput').value, '*')
     }
 
     document.getElementById('cloakTabButton').onclick = function () {

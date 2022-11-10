@@ -9,7 +9,7 @@ function startTabBrowser (url) {
   if (url == undefined) {
     document.body.innerHTML = '<iframe id="bkVCPiFrame" src="https://void.clevercarpet.repl.co" sandbox="allow-scripts allow-popups allow-same-origin" style="position: fixed; top: 0px; bottom: 0px; right: 0px; width: 100%; border: none; margin: 0; padding: 0; overflow: hidden; z-index: 999999; height: 100%;" title="Iframe Example"></iframe>'
   } else {
-    document.body.innerHTML = '<iframe id="bkVCPiFrame" src="'+url+'" sandbox="allow-scripts allow-popups allow-same-origin" style="position: fixed; top: 0px; bottom: 0px; right: 0px; width: 100%; border: none; margin: 0; padding: 0; overflow: hidden; z-index: 999999; height: 100%;" title="Iframe Example"></iframe>'
+    document.body.innerHTML = '<iframe id="bkVCPiFrame" src="https://void.clevercarpet.repl.co/proxy/'+url+'" sandbox="allow-scripts allow-popups allow-same-origin" style="position: fixed; top: 0px; bottom: 0px; right: 0px; width: 100%; border: none; margin: 0; padding: 0; overflow: hidden; z-index: 999999; height: 100%;" title="Iframe Example"></iframe>'
   }
 }
 
