@@ -177,8 +177,6 @@
     const confirmExit = new bootstrap.Modal(document.getElementById('confirmExit'))
     let ogTabName = ''
 
-    tabCloakToast.show()
-
     window.top.postMessage('rqdata|tabtitle', '*')
 
     window.onmessage = function (e) {
