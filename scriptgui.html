@@ -111,36 +111,23 @@
             <div class="modal-content">
                 <div class="modal-header">
                     <h1 class="modal-title fs-5" id="exampleModalLabel">Unblock Website</h1>
-                </div>
-                <div class="modal-body text-center">
-                    <label class="form-label">Attempting to fetch URL</label>
-                    <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
-                        <div class="spinner-border mx-auto" role="status" style="margin-top: 10px;">
-                            <span class="visually-hidden">Loading...</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div class="modal fade" id="unblockAlternativeModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h1 class="modal-title fs-5" id="exampleModalLabel">Unblock Website</h1>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                    <div class="mb-3">
-                        <label for="tabUrlInput" class="form-label">Website URL</label>
-                        <input type="text" class="form-control" id="tabUrlInput" aria-describedby="urlHelp">
+                    <div class="text-center d-grid gap-2 d-sm-flex justify-content-sm-center" id="unblockerLoader">
+                        <label class="form-label">Attempting to fetch URL</label>
+                        <div class="spinner-border mx-auto" role="status" style="margin-top: 10px;margin-bottom: 10px;">
+                            <span class="visually-hidden">Loading...</span>
+                        </div>
+                        <div id="unblockInput" class="mb-3" style="display: none;">
+                            <label for="tabUrlInput" class="form-label">Website URL</label>
+                            <input type="text" class="form-control" id="tabUrlInput" aria-describedby="urlHelp">
+                        </div>
                     </div>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                    <button id="setUnbURLButton" type="button" class="btn btn-primary"
-                        data-bs-dismiss="modal">Unblock</button>
+                    <button id="setUnbURLButton" type="button" class="btn btn-primary" data-bs-dismiss="modal">Unblock</button>
                 </div>
             </div>
         </div>
@@ -170,7 +157,6 @@
     const tabCloakModal = new bootstrap.Modal(document.getElementById('tabCloakModal'))
     const tabCloakTitleModal = new bootstrap.Modal(document.getElementById('tabCloakTitleModal'))
     const unblockModal = new bootstrap.Modal(document.getElementById('unblockModal'))
-    const unblockAltModal = new bootstrap.Modal(document.getElementById('unblockAlternativeModal'))
     const confirmExit = new bootstrap.Modal(document.getElementById('confirmExit'))
     let ogTabName = ''
 
@@ -182,9 +168,9 @@
             if (command[1] == 'tabtitle') {
                 ogTabName = command[2]
             } else if (command[1] == 'taburl') {
-                unblockModal.hide()
                 document.getElementById('tabUrlInput').value = command[2]
-                unblockAltModal.show()
+                    document.getElementById('unblockInput').style.display = 'none'
+                document.getElementById('unblockInput').style.display = 'block'
             }
         }
     };
