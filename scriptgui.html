@@ -111,16 +111,16 @@
         </div>
     </div>
 
-    <div class="modal fade" id="unblockModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div id="unblockModal" class="modal fade" id="tabCloakTitleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h1 class="modal-title fs-5" id="exampleModalLabel">Unblock Website</h1>
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">Tab Cloak</h1>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                    <div id="unblockLoader" class="text-center d-grid gap-2 d-sm-flex justify-content-sm-center"
-                        style="display: none;">
+                    <div id="unblockLoader" class="text-center d-grid gap-2 d-sm-flex justify-content-sm-center" style="display: none;">
                         <label class="form-label">Attempting to fetch URL</label>
                         <div class="spinner-border mx-auto" role="status" style="margin-top: 10px;margin-bottom: 10px;">
                             <span class="visually-hidden">Loading...</span>
@@ -133,8 +133,7 @@
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                    <button id="setUnbURLButton" type="button" class="btn btn-primary"
-                        data-bs-dismiss="modal">Unblock</button>
+                    <button id="setUnbURLButton" type="button" class="btn btn-primary" data-bs-dismiss="modal">Unblock</button>
                 </div>
             </div>
         </div>
