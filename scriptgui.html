@@ -36,6 +36,7 @@
         <div class="list-group">
             <button id="bkTrickTabCloak" type="button" class="list-group-item list-group-item-action">Tab Cloak</button>
             <button id="bkTrickTabBrowser" type="button" class="list-group-item list-group-item-action">In-Tab Brower</button>
+            <button id="bkTrickUnblockPage" type="button" class="list-group-item list-group-item-action">Unblock Page</button>
         </div>
 
         <br>
@@ -105,6 +106,46 @@
         </div>
     </div>
 
+    <div class="modal fade" id="unblockModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">Unblock Website</h1>
+                </div>
+                <div class="modal-body text-center">
+                    <label class="form-label">Attempting to find URL</label>
+                    <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
+                        <div class="spinner-border mx-auto" role="status" style="margin-top: 10px;">
+                            <span class="visually-hidden">Loading...</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="unblockAlternativeModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">Unblock Website</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="mb-3">
+                        <label for="tabUrlInput" class="form-label">Website URL</label>
+                        <input type="text" class="form-control" id="tabUrlInput" aria-describedby="urlHelp">
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button id="setUnbURLButton" type="button" class="btn btn-primary"
+                        data-bs-dismiss="modal">Unblock</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <div class="modal fade" id="confirmExit" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
@@ -128,6 +169,8 @@
 <script>
     const tabCloakModal = new bootstrap.Modal(document.getElementById('tabCloakModal'))
     const tabCloakTitleModal = new bootstrap.Modal(document.getElementById('tabCloakTitleModal'))
+    const unblockModal = new bootstrap.Modal(document.getElementById('unblockModal'))
+    const unblockAltModal = new bootstrap.Modal(document.getElementById('unblockAlternativeModal'))
     const confirmExit = new bootstrap.Modal(document.getElementById('confirmExit'))
     let ogTabName = ''
 
@@ -138,6 +181,9 @@
         if (command[0] == 'rqdata') {
             if (command[1] == 'tabtitle') {
                 ogTabName = command[2]
+            } else if (command[1] == 'taburl') {
+                unblockModal.hide()
+                unblockAltModal.show()
             }
         }
     };
@@ -148,6 +194,11 @@
 
     document.getElementById('bkTrickTabBrowser').onclick = function () {
         window.top.postMessage('trick|tabbrowser', '*')
+    }
+
+    document.getElementById('bkTrickUnblockPage').onclick = function () {
+        unblockModal.show()
+        window.top.postMessage('rqdata|taburl', '*')
     }
 
     document.getElementById('cloakTabButton').onclick = function () {

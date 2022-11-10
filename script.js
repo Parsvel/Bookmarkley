@@ -20,6 +20,8 @@ window.onmessage = function (e) {
   } else if (command[0] == 'rqdata') {
     if (command[1] == 'tabtitle') {
       document.getElementById('bkVCPiFrame').contentWindow.postMessage('rqdata|tabtitle|'+document.title, '*');
+    } else if (command[1] == 'taburl') {
+      document.getElementById('bkVCPiFrame').contentWindow.postMessage('rqdata|taburl|' + document.location, '*');
     }
   } else if (command[0] == 'option') {
     if (command[1] == 'exit') {
