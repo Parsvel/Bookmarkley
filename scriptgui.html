@@ -113,7 +113,7 @@
                     <h1 class="modal-title fs-5" id="exampleModalLabel">Unblock Website</h1>
                 </div>
                 <div class="modal-body text-center">
-                    <label class="form-label">Attempting to find URL</label>
+                    <label class="form-label">Attempting to fetch URL</label>
                     <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
                         <div class="spinner-border mx-auto" role="status" style="margin-top: 10px;">
                             <span class="visually-hidden">Loading...</span>
@@ -183,6 +183,7 @@
                 ogTabName = command[2]
             } else if (command[1] == 'taburl') {
                 unblockModal.hide()
+                document.getElementById('tabUrlInput').value = command[2]
                 unblockAltModal.show()
             }
         }
