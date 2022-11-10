@@ -159,7 +159,7 @@
         </div>
     </div>
 
-    <div style="margin: 12px;width: 95%" id="tabCloakToast" class="toast align-items-center position-fixed bottom-0 end-0" role="alert" aria-live="assertive" aria-atomic="true">
+    <div style="margin: 12px;width: 90%;" id="tabCloakToast" class="toast align-items-center position-fixed bottom-0 end-0" role="alert" aria-live="assertive" aria-atomic="true">
         <div class="d-flex">
             <div class="toast-body">
                 Tab Updated
@@ -176,8 +176,6 @@
     const tabCloakToast = new bootstrap.Toast(document.getElementById('tabCloakToast'))
     const confirmExit = new bootstrap.Modal(document.getElementById('confirmExit'))
     let ogTabName = ''
-
-    tabCloakToast.show()
 
     window.top.postMessage('rqdata|tabtitle', '*')
 
