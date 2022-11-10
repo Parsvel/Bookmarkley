@@ -119,7 +119,8 @@
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                    <div id="unblockLoader" class="text-center d-grid gap-2 d-sm-flex justify-content-sm-center">
+                    <div id="unblockLoader" class="text-center d-grid gap-2 d-sm-flex justify-content-sm-center"
+                        style="display: none;">
                         <label class="form-label">Attempting to fetch URL</label>
                         <div class="spinner-border mx-auto" role="status" style="margin-top: 10px;margin-bottom: 10px;">
                             <span class="visually-hidden">Loading...</span>
@@ -130,14 +131,13 @@
                         <input type="text" class="form-control" id="tabUrlInput" aria-describedby="urlHelp">
                     </div>
                 </div>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                <button id="setUnbURLButton" type="button" class="btn btn-primary"
-                    data-bs-dismiss="modal">Unblock</button>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button id="setUnbURLButton" type="button" class="btn btn-primary"
+                        data-bs-dismiss="modal">Unblock</button>
+                </div>
             </div>
         </div>
-    </div>
     </div>
 
     <div class="modal fade" id="confirmExit" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
