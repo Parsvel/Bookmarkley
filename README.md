@@ -40,11 +40,11 @@ You can learn more about [how Bookmarkley works on our Documentation](https://bo
 ### Features
 
 - **Tab Cloak:** Renames the active Tab's title to a custom input.
-- **Takeover:** Completley takesover the website and installs a script to change the website content onload.
+- **Unblocker:** Unblock a blocked website but running the URL through our proxy network.
 - **Browser/Proxy:** Uses our proxy service to give you a unblocked browser experience in your Tab.
 
 See more of the [bookmarklets on our Documentation](https://bookmarkley.netlify.app/documentation).
 
 ## Roadmap
 
-- **Games:** We are looking to add some games in the future
+- **Edit Mode:** We are planning to add the edit mode feature so you can edit webpages without using the inspect tool.
