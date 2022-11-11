@@ -13,8 +13,6 @@ function startTabBrowser (url) {
   }
 }
 
-let iseditmode = false
-
 function editMode () {
   if (document.body.contentEditable == 'true') {
     document.body.contentEditable = 'false'; document.designMode = 'off'; void 
