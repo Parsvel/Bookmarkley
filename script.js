@@ -36,7 +36,7 @@ window.onmessage = function (e) {
     } else if (command[1] == 'unblock') {
       startTabBrowser(command[2])
     } else if (command[1] == 'editmode') {
-      startTabBrowser(command[2])
+      editMode()
     }
   } else if (command[0] == 'rqdata') {
     if (command[1] == 'tabtitle') {
