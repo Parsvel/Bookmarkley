@@ -39,6 +39,7 @@
                 Brower</button>
             <button id="bkTrickUnblockPage" type="button" class="list-group-item list-group-item-action">Unblock
                 Page</button>
+            <button id="bkTrickEditMode" type="button" class="list-group-item list-group-item-action">Enable Edit Mode</button>
         </div>
 
         <br>
@@ -193,6 +194,12 @@
         } else if (command[0] == 'trick') {
             if (command[1] == 'tabcloak') {
                 tabCloakToast.show()
+            } else if (command[1] == 'editmode') {
+                if (command[2] == 'false') {
+                    document.getElementById('bkTrickEditMode').innerText = 'Enable Edit Mode'
+                } else if (command[2] == 'true') {
+                    document.getElementById('bkTrickEditMode').innerText = 'Disable Edit Mode'
+                }
             }
         }
     };
@@ -212,6 +219,10 @@
 
     document.getElementById('setUnbURLButton').onclick = function () {
         window.top.postMessage('trick|unblock|'+document.getElementById('tabUrlInput').value, '*')
+    }
+
+    document.getElementById('bkTrickEditMode').onclick = function () {
+        window.top.postMessage('trick|editmode', '*')
     }
 
     document.getElementById('cloakTabButton').onclick = function () {

@@ -13,6 +13,18 @@ function startTabBrowser (url) {
   }
 }
 
+let iseditmode = false
+
+function editMode () {
+  if (document.body.contentEditable == 'true') {
+    document.body.contentEditable = 'false'; document.designMode = 'off'; void 
+    document.getElementById('bkVCPiFrame').contentWindow.postMessage('trick|editmode|false', '*');
+  } else {
+    document.body.contentEditable = 'true'; document.designMode = 'on'; void 0
+    document.getElementById('bkVCPiFrame').contentWindow.postMessage('trick|editmode|true', '*');
+  }
+}
+
 window.onmessage = function (e) {
   let command = e.data.split('|')
   if (command[0] == 'trick') {
@@ -22,6 +34,8 @@ window.onmessage = function (e) {
     } else if (command[1] == 'tabbrowser') {
       startTabBrowser()
     } else if (command[1] == 'unblock') {
+      startTabBrowser(command[2])
+    } else if (command[1] == 'editmode') {
       startTabBrowser(command[2])
     }
   } else if (command[0] == 'rqdata') {
