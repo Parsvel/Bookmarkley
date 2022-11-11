@@ -40,6 +40,7 @@
             <button id="bkTrickUnblockPage" type="button" class="list-group-item list-group-item-action">Unblock
                 Page</button>
             <button id="bkTrickEditMode" type="button" class="list-group-item list-group-item-action">Enable Edit Mode</button>
+            <button id="bkTrickDevConsole" type="button" class="list-group-item list-group-item-action">Start Dev Console</button>
         </div>
 
         <br>
@@ -168,6 +169,26 @@
             <button type="button" class="btn-close me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
         </div>
     </div>
+
+    <div style="margin: 12px;width: 92%;" id="editModeToast" class="toast align-items-center position-fixed bottom-0 end-0"
+        role="alert" aria-live="assertive" aria-atomic="true">
+        <div class="d-flex">
+            <div class="toast-body" id="editModeToastText">
+                Edit Mode Enabled
+            </div>
+            <button type="button" class="btn-close me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
+        </div>
+    </div>
+
+    <div style="margin: 12px;width: 92%;" id="devConsoleToast" class="toast align-items-center position-fixed bottom-0 end-0"
+        role="alert" aria-live="assertive" aria-atomic="true">
+        <div class="d-flex">
+            <div class="toast-body" id="editModeToastText">
+                Started Dev Console
+            </div>
+            <button type="button" class="btn-close me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
+        </div>
+    </div>
 </body>
 <script src="bootstrap.bundle.min.js"></script>
 <script>
@@ -175,6 +196,8 @@
     const tabCloakTitleModal = new bootstrap.Modal(document.getElementById('tabCloakTitleModal'))
     const unblockModal = new bootstrap.Modal(document.getElementById('unblockModal'))
     const tabCloakToast = new bootstrap.Toast(document.getElementById('tabCloakToast'))
+    const editModeToast = new bootstrap.Toast(document.getElementById('editModeToast'))
+    const devConsoleToast = new bootstrap.Toast(document.getElementById('devConsoleToast'))
     const confirmExit = new bootstrap.Modal(document.getElementById('confirmExit'))
     let ogTabName = ''
 
@@ -197,9 +220,15 @@
             } else if (command[1] == 'editmode') {
                 if (command[2] == 'false') {
                     document.getElementById('bkTrickEditMode').innerText = 'Enable Edit Mode'
+                    document.getElementById('editModeToastText').innerText = 'Edit Mode Disabled'
+                    editModeToast.show()
                 } else if (command[2] == 'true') {
                     document.getElementById('bkTrickEditMode').innerText = 'Disable Edit Mode'
+                    document.getElementById('editModeToastText').innerText = 'Edit Mode Enabled'
+                    editModeToast.show()
                 }
+            } else if (command[1] == 'devconsole') {
+                devConsoleToast.show()
             }
         }
     };
@@ -223,6 +252,10 @@
 
     document.getElementById('bkTrickEditMode').onclick = function () {
         window.top.postMessage('trick|editmode', '*')
+    }
+
+    document.getElementById('bkTrickDevConsole').onclick = function () {
+        window.top.postMessage('trick|devconsole', '*')
     }
 
     document.getElementById('cloakTabButton').onclick = function () {

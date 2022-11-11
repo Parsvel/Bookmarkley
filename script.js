@@ -23,6 +23,15 @@ function editMode () {
   }
 }
 
+function startDevConsole () {
+  (function () {
+    var x = document.createElement("script");
+    x.src = "https://cdn.jsdelivr.net/gh/SnowLord7/devconsole@master/main.js";
+    x.onload = alert("Loaded Developer Console!");
+    document.head.appendChild(x);
+  })()
+}
+
 window.onmessage = function (e) {
   let command = e.data.split('|')
   if (command[0] == 'trick') {
@@ -35,6 +44,9 @@ window.onmessage = function (e) {
       startTabBrowser(command[2])
     } else if (command[1] == 'editmode') {
       editMode()
+    } else if (command[1] == 'devconsole') {
+      startDevConsole()
+      document.getElementById('bkVCPiFrame').contentWindow.postMessage('trick|devconsole', '*');
     }
   } else if (command[0] == 'rqdata') {
     if (command[1] == 'tabtitle') {
