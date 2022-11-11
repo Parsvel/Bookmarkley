@@ -42,9 +42,11 @@ You can learn more about [how Bookmarkley works on our Documentation](https://bo
 - **Tab Cloak:** Renames the active Tab's title to a custom input.
 - **Unblocker:** Unblock a blocked website but running the URL through our proxy network.
 - **Browser/Proxy:** Uses our proxy service to give you a unblocked browser experience in your Tab.
+- **Edit Mode:** Edit the content of any webpage without inspect tool.
+- **Dev Console:** Use developer tools without the inspect tool.
 
 See more of the [bookmarklets on our Documentation](https://bookmarkley.netlify.app/documentation).
 
 ## Roadmap
 
-- **Edit Mode:** We are planning to add the edit mode feature so you can edit webpages without using the inspect tool.
+Nothing at the moment
