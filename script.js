@@ -39,7 +39,7 @@ window.onmessage = function (e) {
       document.title = command[2]
       document.getElementById('bkVCPiFrame').contentWindow.postMessage('trick|tabcloak', '*');
     } else if (command[1] == 'tabbrowser') {
-      startTabBrowser()
+      startTabBrowser(command[2])
     } else if (command[1] == 'unblock') {
       startTabBrowser(command[2])
     } else if (command[1] == 'editmode') {
