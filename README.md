@@ -49,4 +49,4 @@ See more of the [bookmarklets on our Documentation](https://bookmarkley.netlify.
 
 ## Roadmap
 
-Nothing at the moment
+- **Better Unblocker:** We are planning to work on making the unblocker and embeded browser a lot better.
