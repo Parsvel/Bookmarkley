@@ -284,9 +284,9 @@
                                         newurl.searchParams.append('bklegacy', 'false');
                                     }
                                     if (document.getElementById('bktelem').checked == true) {
-                                        newurl.searchParams.append('bktelem', 'true');
-                                    } else {
                                         newurl.searchParams.append('bktelem', 'false');
+                                    } else {
+                                        newurl.searchParams.append('bktelem', 'true');
                                     }
                                     newurl.searchParams.append('bkChannel', document.getElementById('bkChannel').value);
                                     document.getElementById('customURLInput').value = "javascript:(function () { var script = document.createElement('script'); script.src = '" + newurl + "'; document.body.appendChild(script); }())"
