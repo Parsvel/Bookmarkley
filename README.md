@@ -37,7 +37,13 @@ Bookmarkley is a bookmarklet script that uses gives users a UI for a library of 
 
 You can learn more about [how Bookmarkley works on our Documentation](https://bookmarkley.netlify.app/#how-it-works).
 
-### Features
+<p float="left">
+  <img src="https://github.com/CleverCarpet/Bookmarkley/blob/main/bookmarkleyScreenshot.png?raw=true" width="200" />
+  <img src="https://github.com/CleverCarpet/Bookmarkley/blob/main/demo.gif?raw=true" width="200" /> 
+  <img src="https://github.com/CleverCarpet/Bookmarkley/blob/main/installdemo.gif?raw=true" width="200" />
+</p>
+
+## Features
 
 - **Tab Cloak:** Renames the active Tab's title to a custom input.
 - **Unblocker:** Unblock a blocked website but running the URL through our proxy network.
