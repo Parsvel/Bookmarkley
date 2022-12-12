@@ -5,7 +5,7 @@
 //| |_) | |__| | |__| | . \| |  | |/ ____ \| | \ \| . \| |____| |____   | |   
 //|____/ \____/ \____/|_|\_\_|  |_/_/    \_\_|  \_\_|\_\______|______|  |_|   
 
-//Since I KNOW that people are gonna get all up in here and straight up snip MY code, imma just let ALL Y'ALL know that my code licensed so check the license before y'all just copy my code.
+//Since I KNOW that people are gonna get all up in here and straight up snip MY code, imma just let ALL Y'ALL know that my code is licensed so check the license before y'all just copy my code.
 
 //Inject Menu
 if (document.getElementById('bkVCPControlPanel') == undefined) {
