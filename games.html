@@ -32,22 +32,23 @@
             Bookmarkley is still in beta, some things might not work.
         </div>
 
-        <h4>Games</h4>
-        <div class="list-group">
-            <button id="bkGameSnake" type="button" class="list-group-item list-group-item-action">Snake</button>
+        <br>
+
+        <div class="card" style="padding: 1.2%;">
+            <div class="form-check form-switch">
+                <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault">
+                <label class="form-check-label" for="flexSwitchCheckDefault">Cloak Tab</label>
+            </div>
         </div>
 
         <br>
 
-        <div class="card">
-            <div class="card-body">
-                <h5 class="card-title">Latest Update</h5>
-                <p class="card-text">Fixed some bugs. Added In-Tab Browser script.</p>
-            </div>
-            <div class="card-footer">
-                <small class="text-muted">v1.0</small>
-            </div>
+        <h4>Games</h4>
+        <div class="list-group">
+            <button id="bkGameSnake" type="button" class="list-group-item list-group-item-action">Snake</button>
         </div>
+        
+        <br>
     </div>
 
     <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
@@ -61,25 +62,36 @@
                 <a href="scriptgui.html" class="list-group-item list-group-item-action">Home</a>
                 <a href="games.html" class="list-group-item list-group-item-action active" aria-current="true">Games</a>
                 <a href="options.html" class="list-group-item list-group-item-action">Options</a>
-                <button id="exitButton" type="button" class="list-group-item list-group-item-action">Exit</button>
             </div>
         </div>
     </div>
 
-    <div class="modal fade" id="confirmExit" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div id="snakeModal" class="modal fade" id="tabCloakTitleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h1 class="modal-title fs-5" id="exampleModalLabel">Are you sure?</h1>
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">Snake</h1>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                    Are you sure you want to exit Bookmarkley? To reopen Bookmarkley, just click the bookmark again.
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="snakeFullScreenCheck">
+                        <label class="form-check-label" for="snakeFullScreenCheck">
+                            Fullscreen
+                        </label>
+                    </div>
+                    div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="" id="snakeSoundCheck">
+                    <label class="form-check-label" for="snakeSoundCheck">
+                        Sound
+                    </label>
+                    </div>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                    <button id="confirmExitButton" type="button" class="btn btn-primary"
-                        data-bs-dismiss="modal">Exit</button>
+                    <button id="snakePlayBtn" type="button" class="btn btn-primary" data-bs-dismiss="modal"
+                        disabled>Play</button>
                 </div>
             </div>
         </div>
@@ -123,7 +135,6 @@
     const tabCloakToast = new bootstrap.Toast(document.getElementById('tabCloakToast'))
     const editModeToast = new bootstrap.Toast(document.getElementById('editModeToast'))
     const devConsoleToast = new bootstrap.Toast(document.getElementById('devConsoleToast'))
-    const confirmExit = new bootstrap.Modal(document.getElementById('confirmExit'))
     let ogTabName = ''
 
     window.top.postMessage('rqdata|tabtitle', '*')
