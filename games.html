@@ -117,10 +117,7 @@
 </body>
 <script src="bootstrap.bundle.min.js"></script>
 <script>
-    const tabCloakModal = new bootstrap.Modal(document.getElementById('tabCloakModal'))
-    const tabCloakTitleModal = new bootstrap.Modal(document.getElementById('tabCloakTitleModal'))
-    const unblockModal = new bootstrap.Modal(document.getElementById('unblockModal'))
-    const inTabModal = new bootstrap.Modal(document.getElementById('inTabModal'))
+    const snakeModal = new bootstrap.Modal(document.getElementById('snakeModal'))
     const tabCloakToast = new bootstrap.Toast(document.getElementById('tabCloakToast'))
     const editModeToast = new bootstrap.Toast(document.getElementById('editModeToast'))
     const devConsoleToast = new bootstrap.Toast(document.getElementById('devConsoleToast'))
@@ -158,53 +155,12 @@
         }
     };
 
-    document.getElementById('bkTrickTabCloak').onclick = function () {
-        tabCloakModal.show()
+    document.getElementById('bkGameSnake').onclick = function () {
+        snakeModal.show()
     }
 
-    document.getElementById('bkTrickTabBrowser').onclick = function () {
-        inTabModal.show()
-    }
-
-    document.getElementById('goBrowseURLButton').onclick = function () {
-        window.top.postMessage('trick|tabbrowser|'+document.getElementById('inTabUrlInput').value, '*')
-    }
-
-    document.getElementById('bkTrickUnblockPage').onclick = function () {
-        unblockModal.show()
-        window.top.postMessage('rqdata|taburl', '*')
-    }
-
-    document.getElementById('setUnbURLButton').onclick = function () {
-        window.top.postMessage('trick|unblock|'+document.getElementById('tabUrlInput').value, '*')
-    }
-
-    document.getElementById('bkTrickEditMode').onclick = function () {
-        window.top.postMessage('trick|editmode', '*')
-    }
-
-    document.getElementById('bkTrickDevConsole').onclick = function () {
-        window.top.postMessage('trick|devconsole', '*')
-    }
-
-    document.getElementById('cloakTabButton').onclick = function () {
-        tabCloakTitleModal.show()
-    }
-
-    document.getElementById('setTabCloakButton').onclick = function () {
-        window.top.postMessage('trick|tabcloak|' + document.getElementById('tabTitleInput').value, '*')
-    }
-
-    document.getElementById('resetTabButton').onclick = function () {
-        window.top.postMessage('trick|tabcloak|' + ogTabName, '*')
-    }
-
-    document.getElementById('exitButton').onclick = function () {
-        confirmExit.show()
-    }
-
-    document.getElementById('confirmExitButton').onclick = function () {
-        window.top.postMessage('option|exit', '*')
+    document.getElementById('snakePlayButton').onclick = function () {
+        window.top.postMessage('game|start|snake')
     }
 </script>
 
