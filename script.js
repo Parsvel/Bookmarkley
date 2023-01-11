@@ -70,6 +70,10 @@ window.onmessage = function (e) {
     } else if (command[1] == 'taburl') {
       document.getElementById('bkVCPiFrame').contentWindow.postMessage('rqdata|taburl|' + document.location, '*');
     }
+  } else if (command[0] == 'game') {
+    if (command[1] == 'start') {
+      
+    }
   } else if (command[0] == 'option') {
     if (command[1] == 'exit') {
       document.getElementById('bkVCPControlPanel').style.display = 'none'

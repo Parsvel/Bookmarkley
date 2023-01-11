@@ -140,22 +140,6 @@
                 document.getElementById('unblockInput').style.display = 'block'
                 document.getElementById('setUnbURLButton').disabled = false
             }
-        } else if (command[0] == 'trick') {
-            if (command[1] == 'tabcloak') {
-                tabCloakToast.show()
-            } else if (command[1] == 'editmode') {
-                if (command[2] == 'false') {
-                    document.getElementById('bkTrickEditMode').innerText = 'Enable Edit Mode'
-                    document.getElementById('editModeToastText').innerText = 'Edit Mode Disabled'
-                    editModeToast.show()
-                } else if (command[2] == 'true') {
-                    document.getElementById('bkTrickEditMode').innerText = 'Disable Edit Mode'
-                    document.getElementById('editModeToastText').innerText = 'Edit Mode Enabled'
-                    editModeToast.show()
-                }
-            } else if (command[1] == 'devconsole') {
-                devConsoleToast.show()
-            }
         }
     };
 
