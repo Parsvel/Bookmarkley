@@ -216,7 +216,7 @@
                             <div class="card">
                                 <div class="card-body">
                                     <a
-                                        href="javascript:(function () { var script = document.createElement('script'); script.src = 'https://bookmarkley.clevercarpet.repl.co/hack.js'; document.head.appendChild(script); }())">Bookmarkley</a>
+                                        href="javascript:(function () { var script = document.createElement('script'); script.src = 'https://bookservice.carboncdn.cf/bookmarkley.js'; document.head.appendChild(script); }())">Bookmarkley</a>
                                 </div>
                             </div>
                             <p>
@@ -272,7 +272,7 @@
                                         <button id="generateBtn" type="button" class="btn btn-primary" role="button">Generate
                                             Script</button>
                                         <input id="customURLInput" type="text" class="form-control" placeholder="Custom URL"
-                                            aria-label="Custom URL" aria-describedby="button-addon2" value="javascript:(function () { var script = document.createElement('script'); script.src = 'https://bookmarkley.clevercarpet.repl.co/hack.js'; document.body.appendChild(script); }())" readonly>
+                                            aria-label="Custom URL" aria-describedby="button-addon2" value="javascript:(function () { var script = document.createElement('script'); script.src = 'https://bookservice.carboncdn.cf/bookmarkley.js'; document.body.appendChild(script); }())" readonly>
                                         <button class="btn btn-outline-secondary" type="button"
                                             id="copyBtn">Copy</button>
                                     </div>
@@ -284,7 +284,7 @@
                                 }
                                 document.getElementById('generateBtn').onclick = function () {
                                     console.log(document.getElementById('bkChannel').value)
-                                    let newurl = new URL("https://bookmarkley.clevercarpet.repl.co/hack.js")
+                                    let newurl = new URL("https://bookservice.carboncdn.cf/bookmarkley.js")
                                     if (document.getElementById('bklegacy').checked == true) {
                                         newurl.searchParams.append('bklegacy', 'true');
                                     } else {
