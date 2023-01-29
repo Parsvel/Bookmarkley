@@ -7,6 +7,9 @@
 
 //Since I KNOW that people are gonna get all up in here and straight up snip MY code, imma just let ALL Y'ALL know that my code is licensed so check the license before y'all just copy my code.
 
+//Initialize variables
+let bmxversion = "0.1"
+
 //Inject Menu
 //Creates the DIV element for the Bookmarkley iFrame and loads the page
 if (document.getElementById('bkVCPControlPanel') == undefined) {
@@ -14,6 +17,17 @@ if (document.getElementById('bkVCPControlPanel') == undefined) {
 } else {
   document.getElementById('bkVCPControlPanel').style.display = 'block'
 }
+
+//Check for update
+async function checkBKVersion() {
+  let fetchbmxVersion = await fetch('https://bookservice.carboncdn.cf/latestinfo.json')
+  let resbmxVersion = await fetchbmxVersion.json()
+  if (!resbmxVersion.supportedVersions.includes(bmxversion)) {
+    document.getElementById('bkVCPiFrame').contentWindow.postMessage('updater|outdatedversion', '*');
+  }
+}
+
+checkBKVersion()
 
 //In-Tab Browser
 //Replaces the entire page content with an iFrame that loads a certian webpage

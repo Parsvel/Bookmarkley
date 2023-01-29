@@ -160,6 +160,25 @@
         </div>
     </div>
 
+    <div class="modal fade" id="outOfDateModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">Bookmarkley Is Out of Date</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    Your current version of Bookmarkley is out of date. This means your version might not have the lasest features and bug fixes.
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button id="updateButton" type="button" class="btn btn-primary"
+                        data-bs-dismiss="modal">Update Version</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <div class="modal fade" id="confirmExit" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
@@ -210,6 +229,7 @@
 </body>
 <script src="bootstrap.bundle.min.js"></script>
 <script>
+    const outOfDateModal = new bootstrap.Modal(document.getElementById('outOfDateModal'))
     const tabCloakModal = new bootstrap.Modal(document.getElementById('tabCloakModal'))
     const tabCloakTitleModal = new bootstrap.Modal(document.getElementById('tabCloakTitleModal'))
     const unblockModal = new bootstrap.Modal(document.getElementById('unblockModal'))
@@ -224,7 +244,11 @@
 
     window.onmessage = function (e) {
         let command = e.data.split('|')
-        if (command[0] == 'rqdata') {
+        if (command[0] == 'updater') {
+            if (command[1] == 'outdatedversion') {
+                
+            }
+        } else if (command[0] == 'rqdata') {
             if (command[1] == 'tabtitle') {
                 ogTabName = command[2]
             } else if (command[1] == 'taburl') {
