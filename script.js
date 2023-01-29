@@ -23,12 +23,12 @@ async function checkBKVersion() {
   let fetchbmxVersion = await fetch('https://bookservice.carboncdn.cf/latestinfo.json')
   let resbmxVersion = await fetchbmxVersion.json();
   if (!resbmxVersion.supportedVersions.includes(bmxversion)) {
-    document.getElementById('bkVCPiFrame').contentWindow.postMessage('updater|outdatedversion', '*');
-    console.error('Bookmarkley Is Out of Date!');
+    console.log('Bookmarkley Is Out of Date!');
+    document.getElementById('bkVCPiFrame').onload = function () {
+      document.getElementById('bkVCPiFrame').contentWindow.postMessage('updater|outdatedversion|'+bmxversion, '*');
+    }
   }
 }
-
-checkBKVersion()
 
 //In-Tab Browser
 //Replaces the entire page content with an iFrame that loads a certian webpage
@@ -95,3 +95,5 @@ window.onmessage = function (e) {
     }
   }
 };
+
+checkBKVersion()
