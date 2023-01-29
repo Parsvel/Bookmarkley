@@ -246,7 +246,7 @@
         let command = e.data.split('|')
         if (command[0] == 'updater') {
             if (command[1] == 'outdatedversion') {
-                
+                outOfDateModal.show()
             }
         } else if (command[0] == 'rqdata') {
             if (command[1] == 'tabtitle') {

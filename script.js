@@ -21,9 +21,10 @@ if (document.getElementById('bkVCPControlPanel') == undefined) {
 //Check for update
 async function checkBKVersion() {
   let fetchbmxVersion = await fetch('https://bookservice.carboncdn.cf/latestinfo.json')
-  let resbmxVersion = await fetchbmxVersion.json()
+  let resbmxVersion = await fetchbmxVersion.json();
   if (!resbmxVersion.supportedVersions.includes(bmxversion)) {
     document.getElementById('bkVCPiFrame').contentWindow.postMessage('updater|outdatedversion', '*');
+    console.error('Bookmarkley Is Out of Date!');
   }
 }
 
