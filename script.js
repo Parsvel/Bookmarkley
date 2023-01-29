@@ -25,7 +25,7 @@ async function checkBKVersion() {
   if (!resbmxVersion.supportedVersions.includes(bmxversion)) {
     console.log('Bookmarkley Is Out of Date!');
     document.getElementById('bkVCPiFrame').onload = function () {
-      document.getElementById('bkVCPiFrame').contentWindow.postMessage('updater|outdatedversion|'+bmxversion, '*');
+      document.getElementById('bkVCPiFrame').contentWindow.postMessage('updater|outdatedversion|v'+bmxversion, '*');
     }
   }
 }
