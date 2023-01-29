@@ -170,6 +170,7 @@
                 <div class="modal-body">
                     Your current version of Bookmarkley is out of date. This means your version might not have the lasest features and bug fixes.
                     <br>
+                    <br>
                     You are currently using <strong><span id="currentV">v0.1</span></strong>.
                 </div>
                 <div class="modal-footer">
@@ -318,6 +319,10 @@
 
     document.getElementById('resetTabButton').onclick = function () {
         window.top.postMessage('trick|tabcloak|' + ogTabName, '*')
+    }
+
+    document.getElementById('exitButton').onclick = function () {
+        window.top.postMessage('updater|open', '*')
     }
 
     document.getElementById('exitButton').onclick = function () {

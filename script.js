@@ -8,7 +8,11 @@
 //Since I KNOW that people are gonna get all up in here and straight up snip MY code, imma just let ALL Y'ALL know that my code is licensed so check the license before y'all just copy my code.
 
 //Initialize variables
-let bmxversion = "0.1"
+if (bmxversion == undefined) {
+  let bmxversion = "0.1"
+} else {
+  bmxversion = "0.1"
+}
 
 //Inject Menu
 //Creates the DIV element for the Bookmarkley iFrame and loads the page
@@ -65,7 +69,11 @@ function startDevConsole () {
 
 window.onmessage = function (e) {
   let command = e.data.split('|')
-  if (command[0] == 'trick') {
+   if (command[0] == 'updater') {
+    if (command[1] == 'open') {
+      window.open('https://bookmarkley.carbondev.cf/documentation#section1-1', '_blank');
+    }
+  } else if (command[0] == 'trick') {
     if (command[1] == 'tabcloak') {
       document.title = command[2]
       document.getElementById('bkVCPiFrame').contentWindow.postMessage('trick|tabcloak', '*');
