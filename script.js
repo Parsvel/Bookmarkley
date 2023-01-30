@@ -22,7 +22,7 @@ if (document.getElementById('bkVCPControlPanel') == undefined) {
 
 //Check for update
 async function checkBKVersion() {
-  let fetchbmxVersion = await fetch('https://bookservice.carboncdn.cf/latestinfo.json')
+  let fetchbmxVersion = await fetch('https://bookmarkley.carbondev.cf/latestinfo.json')
   let resbmxVersion = await fetchbmxVersion.json();
   if (!resbmxVersion.supportedVersions.includes(bmxversion)) {
     console.log('Bookmarkley Is Out of Date!');
