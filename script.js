@@ -9,7 +9,7 @@
 
 //Initialize variables
 if (bmxversion == undefined) {
-  var bmxversion = "0.1"
+  var bmxversion = "0.2"
 }
 
 //Inject Menu
