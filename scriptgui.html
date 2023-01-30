@@ -44,9 +44,12 @@
                 Brower</button>
             <button id="bkTrickUnblockPage" type="button" class="list-group-item list-group-item-action">Unblock
                 Page</button>
-            <button id="bkTrickEditMode" type="button" class="list-group-item list-group-item-action">Enable Edit Mode</button>
-            <button id="bkTrickDevConsole" type="button" class="list-group-item list-group-item-action">Start Dev Console</button>
-            <button id="bkFloodHistory" type="button" class="list-group-item list-group-item-action">Flood History</button>
+            <button id="bkTrickEditMode" type="button" class="list-group-item list-group-item-action">Enable Edit
+                Mode</button>
+            <button id="bkTrickDevConsole" type="button" class="list-group-item list-group-item-action">Start Dev
+                Console</button>
+            <button id="bkFloodHistory" type="button" class="list-group-item list-group-item-action">Flood
+                History</button>
         </div>
 
         <br>
@@ -126,7 +129,8 @@
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                    <button id="goBrowseURLButton" type="button" class="btn btn-primary" data-bs-dismiss="modal">Go</button>
+                    <button id="goBrowseURLButton" type="button" class="btn btn-primary"
+                        data-bs-dismiss="modal">Go</button>
                 </div>
             </div>
         </div>
@@ -161,6 +165,32 @@
         </div>
     </div>
 
+    <div class="modal fade" id="historyFlooderModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">History Flooder</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p>
+                        Flood your history with many instances of the current website.
+                    </p>
+                    <div class="mb-3">
+                        <label for="floodNumInput" class="form-label">How Many Instances</label>
+                        <input type="number" class="form-control" id="floodNumInput" aria-describedby="titleHelp" value="5">
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button id="historyFloodButton" type="button" class="btn btn-primary"
+                        data-bs-dismiss="modal">Flood</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <div class="modal fade" id="outOfDateModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
@@ -169,15 +199,16 @@
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                    Your current version of Bookmarkley is out of date. This means your version might not have the lasest features and bug fixes.
+                    Your current version of Bookmarkley is out of date. This means your version might not have the
+                    lasest features and bug fixes.
                     <br>
                     <br>
                     You are currently using <strong><span id="currentV">v0.1</span></strong>.
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                    <button id="updateButton" type="button" class="btn btn-primary"
-                        data-bs-dismiss="modal">Update Version</button>
+                    <button id="updateButton" type="button" class="btn btn-primary" data-bs-dismiss="modal">Update
+                        Version</button>
                 </div>
             </div>
         </div>
@@ -202,7 +233,9 @@
         </div>
     </div>
 
-    <div style="margin: 12px;width: 92%;" id="tabCloakToast" class="toast align-items-center position-fixed bottom-0 end-0" role="alert" aria-live="assertive" aria-atomic="true">
+    <div style="margin: 12px;width: 92%;" id="tabCloakToast"
+        class="toast align-items-center position-fixed bottom-0 end-0" role="alert" aria-live="assertive"
+        aria-atomic="true">
         <div class="d-flex">
             <div class="toast-body">
                 Tab Updated
@@ -211,8 +244,20 @@
         </div>
     </div>
 
-    <div style="margin: 12px;width: 92%;" id="editModeToast" class="toast align-items-center position-fixed bottom-0 end-0"
-        role="alert" aria-live="assertive" aria-atomic="true">
+    <div style="margin: 12px;width: 92%;" id="historyFloodToast"
+        class="toast align-items-center position-fixed bottom-0 end-0" role="alert" aria-live="assertive"
+        aria-atomic="true">
+        <div class="d-flex">
+            <div class="toast-body" id="editModeToastText">
+                History Successfully Flooded <span id="floodNum">5</span> Times
+            </div>
+            <button type="button" class="btn-close me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
+        </div>
+    </div>
+
+    <div style="margin: 12px;width: 92%;" id="editModeToast"
+        class="toast align-items-center position-fixed bottom-0 end-0" role="alert" aria-live="assertive"
+        aria-atomic="true">
         <div class="d-flex">
             <div class="toast-body" id="editModeToastText">
                 Edit Mode Enabled
@@ -221,8 +266,9 @@
         </div>
     </div>
 
-    <div style="margin: 12px;width: 92%;" id="devConsoleToast" class="toast align-items-center position-fixed bottom-0 end-0"
-        role="alert" aria-live="assertive" aria-atomic="true">
+    <div style="margin: 12px;width: 92%;" id="devConsoleToast"
+        class="toast align-items-center position-fixed bottom-0 end-0" role="alert" aria-live="assertive"
+        aria-atomic="true">
         <div class="d-flex">
             <div class="toast-body" id="editModeToastText">
                 Started Dev Console
@@ -237,10 +283,12 @@
     const tabCloakModal = new bootstrap.Modal(document.getElementById('tabCloakModal'))
     const tabCloakTitleModal = new bootstrap.Modal(document.getElementById('tabCloakTitleModal'))
     const unblockModal = new bootstrap.Modal(document.getElementById('unblockModal'))
+    const floodHistoryModal = new bootstrap.Modal(document.getElementById('historyFlooderModal'))
     const inTabModal = new bootstrap.Modal(document.getElementById('inTabModal'))
     const tabCloakToast = new bootstrap.Toast(document.getElementById('tabCloakToast'))
     const editModeToast = new bootstrap.Toast(document.getElementById('editModeToast'))
     const devConsoleToast = new bootstrap.Toast(document.getElementById('devConsoleToast'))
+    const historyFloodToast = new bootstrap.Toast(document.getElementById('historyFloodToast'))
     const confirmExit = new bootstrap.Modal(document.getElementById('confirmExit'))
     let ogTabName = ''
 
@@ -277,6 +325,11 @@
                 }
             } else if (command[1] == 'devconsole') {
                 devConsoleToast.show()
+            } else if (command[1] == 'flooder') {
+                if (command[2] == 'success') {
+                    document.getElementById('floodNum').innerText = command[3]
+                    historyFloodToast.show()
+                }
             }
         }
     };
@@ -290,7 +343,7 @@
     }
 
     document.getElementById('goBrowseURLButton').onclick = function () {
-        window.top.postMessage('trick|tabbrowser|'+document.getElementById('inTabUrlInput').value, '*')
+        window.top.postMessage('trick|tabbrowser|' + document.getElementById('inTabUrlInput').value, '*')
     }
 
     document.getElementById('bkTrickUnblockPage').onclick = function () {
@@ -299,7 +352,7 @@
     }
 
     document.getElementById('setUnbURLButton').onclick = function () {
-        window.top.postMessage('trick|unblock|'+document.getElementById('tabUrlInput').value, '*')
+        window.top.postMessage('trick|unblock|' + document.getElementById('tabUrlInput').value, '*')
     }
 
     document.getElementById('bkTrickEditMode').onclick = function () {
@@ -320,6 +373,14 @@
 
     document.getElementById('resetTabButton').onclick = function () {
         window.top.postMessage('trick|tabcloak|' + ogTabName, '*')
+    }
+
+    document.getElementById('bkFloodHistory').onclick = function () {
+        floodHistoryModal.show()
+    }
+    
+    document.getElementById('historyFloodButton').onclick = function () {
+        window.top.postMessage('trick|flooder|' + document.getElementById('floodNumInput').value, '*')
     }
 
     document.getElementById('exitButton').onclick = function () {

@@ -9,13 +9,13 @@
 
 //Initialize variables
 if (bmxversion == undefined) {
-  var bmxversion = "0.1"
+  var bmxversion = "0.2"
 }
 
 //Inject Menu
 //Creates the DIV element for the Bookmarkley iFrame and loads the page
 if (document.getElementById('bkVCPControlPanel') == undefined) {
-  document.body.innerHTML = document.body.innerHTML + `<span id='bkVCPControlPanel'><style>.revokeallcss { all: none; }</style><link href="https://cdn.jsdelivr.net/npm/jspanel4@4.12.0/dist/jspanel.css" rel="stylesheet"><script src="https://cdn.jsdelivr.net/npm/jspanel4@4.12.0/dist/jspanel.js"></script><div style="z-index: 999 !important;position: absolute;max-width:325px;width: 325px; height: relative; position: fixed; top: 0; left: 5%;background-color: black;"><iframe id="bkVCPiFrame" src="https://bookmarkley.netlify.app/scriptgui.html" sandbox="allow-scripts allow-popups allow-same-origin" height="500" width="325" title="Iframe Example"></iframe></div></span>`
+  document.body.innerHTML = document.body.innerHTML + `<span id='bkVCPControlPanel'><style>.revokeallcss { all: none; }</style><link href="https://cdn.jsdelivr.net/npm/jspanel4@4.12.0/dist/jspanel.css" rel="stylesheet"><script src="https://cdn.jsdelivr.net/npm/jspanel4@4.12.0/dist/jspanel.js"></script><div style="z-index: 999 !important;position: absolute;max-width:325px;width: 325px; height: relative; position: fixed; top: 0; left: 5%;background-color: black;"><iframe id="bkVCPiFrame" src="https://bookservice.carboncdn.cf/scriptgui.html" sandbox="allow-scripts allow-popups allow-same-origin" height="500" width="325" title="Iframe Example"></iframe></div></span>`
 } else {
   document.getElementById('bkVCPControlPanel').style.display = 'block'
 }
@@ -73,7 +73,7 @@ function floodHistory(num) {
     history.pushState(0, 0, i == num ? x : i.toString()); if (i == num) { done = true }
   }
   if (done === true) {
-    document.getElementById('bkVCPiFrame').contentWindow.postMessage('flooder|success|' + num, '*');
+    document.getElementById('bkVCPiFrame').contentWindow.postMessage('trick|flooder|success|' + num, '*');
   }
 }
 
@@ -96,6 +96,8 @@ window.onmessage = function (e) {
     } else if (command[1] == 'devconsole') {
       startDevConsole()
       document.getElementById('bkVCPiFrame').contentWindow.postMessage('trick|devconsole', '*');
+    } else if (command[1] == 'flooder') {
+      floodHistory(command[2])
     }
   } else if (command[0] == 'rqdata') {
     if (command[1] == 'tabtitle') {
@@ -103,8 +105,6 @@ window.onmessage = function (e) {
     } else if (command[1] == 'taburl') {
       document.getElementById('bkVCPiFrame').contentWindow.postMessage('rqdata|taburl|' + document.location, '*');
     }
-  } else if (command[0] == 'flooder') {
-    floodHistory(command[1])
   } else if (command[0] == 'game') {
     if (command[1] == 'start') {
 
