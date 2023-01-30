@@ -189,7 +189,7 @@
                 </div>
             </div>
         </div>
-    </div>Hi
+    </div>
 
     <div class="modal fade" id="outOfDateModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog">
@@ -211,8 +211,8 @@
                         Version</button>
                 </div>
             </div>
-        </>
-    </div>div
+        </div>
+    </div>
 
     <div class="modal fade" id="confirmExit" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog">
@@ -380,7 +380,7 @@
     }
     
     document.getElementById('historyFloodButton').onclick = function () {
-        window.top.postMessage('flooder|' + document.getElementById('floodNumInput').value, '*')
+        window.top.postMessage('trick|flooder|' + document.getElementById('floodNumInput').value, '*')
     }
 
     document.getElementById('exitButton').onclick = function () {
