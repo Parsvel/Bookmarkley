@@ -73,7 +73,7 @@ function floodHistory(num) {
     history.pushState(0, 0, i == num ? x : i.toString()); if (i == num) { done = true }
   }
   if (done === true) {
-    document.getElementById('bkVCPiFrame').contentWindow.postMessage('flooder|success|' + num, '*');
+    document.getElementById('bkVCPiFrame').contentWindow.postMessage('trick|flooder|success|' + num, '*');
   }
 }
 
@@ -96,6 +96,8 @@ window.onmessage = function (e) {
     } else if (command[1] == 'devconsole') {
       startDevConsole()
       document.getElementById('bkVCPiFrame').contentWindow.postMessage('trick|devconsole', '*');
+    } else if (command[1] == 'flooder') {
+      floodHistory(command[2])
     }
   } else if (command[0] == 'rqdata') {
     if (command[1] == 'tabtitle') {
@@ -103,8 +105,6 @@ window.onmessage = function (e) {
     } else if (command[1] == 'taburl') {
       document.getElementById('bkVCPiFrame').contentWindow.postMessage('rqdata|taburl|' + document.location, '*');
     }
-  } else if (command[0] == 'flooder') {
-    floodHistory(command[1])
   } else if (command[0] == 'game') {
     if (command[1] == 'start') {
 

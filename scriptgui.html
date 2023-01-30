@@ -249,7 +249,7 @@
         aria-atomic="true">
         <div class="d-flex">
             <div class="toast-body" id="editModeToastText">
-                History Successfully Flooded
+                History Successfully Flooded <span id="floodNum">5</span> Times
             </div>
             <button type="button" class="btn-close me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
         </div>
@@ -325,6 +325,11 @@
                 }
             } else if (command[1] == 'devconsole') {
                 devConsoleToast.show()
+            } else if (command[1] == 'flooder') {
+                if (command[2] == 'success') {
+                    document.getElementById('floodNum').innerText = command[3]
+                    historyFloodToast.show()
+                }
             }
         }
     };
@@ -374,7 +379,7 @@
         floodHistoryModal.show()
     }
     
-    document.getElementById('floodHistoryButton').onclick = function () {
+    document.getElementById('historyFloodButton').onclick = function () {
         window.top.postMessage('flooder|' + document.getElementById('floodNumInput').value, '*')
     }
 
