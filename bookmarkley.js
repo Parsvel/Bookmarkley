@@ -15,14 +15,14 @@ if (bmxversion == undefined) {
 //Inject Menu
 //Creates the DIV element for the Bookmarkley iFrame and loads the page
 if (document.getElementById('bkVCPControlPanel') == undefined) {
-  document.body.innerHTML = document.body.innerHTML + `<span id='bkVCPControlPanel'><style>.revokeallcss { all: none; }</style><link href="https://cdn.jsdelivr.net/npm/jspanel4@4.12.0/dist/jspanel.css" rel="stylesheet"><script src="https://cdn.jsdelivr.net/npm/jspanel4@4.12.0/dist/jspanel.js"></script><div style="z-index: 999 !important;position: absolute;max-width:325px;width: 325px; height: relative; position: fixed; top: 0; left: 5%;background-color: black;"><iframe id="bkVCPiFrame" src="https://bookservice.carbondev.cf/scriptgui.html" sandbox="allow-scripts allow-popups allow-same-origin" height="500" width="325" title="Iframe Example"></iframe></div></span>`
+  document.body.innerHTML = document.body.innerHTML + `<span id='bkVCPControlPanel'><style>.revokeallcss { all: none; }</style><link href="https://cdn.jsdelivr.net/npm/jspanel4@4.12.0/dist/jspanel.css" rel="stylesheet"><script src="https://cdn.jsdelivr.net/npm/jspanel4@4.12.0/dist/jspanel.js"></script><div style="z-index: 999 !important;position: absolute;max-width:325px;width: 325px; height: relative; position: fixed; top: 0; left: 5%;background-color: black;"><iframe id="bkVCPiFrame" src="https://bookmarkley.carbondev.cf/scriptgui.html" sandbox="allow-scripts allow-popups allow-same-origin" height="500" width="325" title="Iframe Example"></iframe></div></span>`
 } else {
   document.getElementById('bkVCPControlPanel').style.display = 'block'
 }
 
 //Check for update
 async function checkBKVersion() {
-  let fetchbmxVersion = await fetch('https://bookmarkley.carboncdn.cf/latestinfo.json')
+  let fetchbmxVersion = await fetch('https://bookservice.carboncdn.cf/latestinfo.json')
   let resbmxVersion = await fetchbmxVersion.json();
   if (!resbmxVersion.supportedVersions.includes(bmxversion)) {
     console.log('Bookmarkley Is Out of Date!');
