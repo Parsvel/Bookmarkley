@@ -27,27 +27,27 @@ async function checkBKVersion() {
   if (!resbmxVersion.supportedVersions.includes(bmxversion)) {
     console.log('Bookmarkley Is Out of Date!');
     document.getElementById('bkVCPiFrame').onload = function () {
-      document.getElementById('bkVCPiFrame').contentWindow.postMessage('updater|outdatedversion|v'+bmxversion, '*');
+      document.getElementById('bkVCPiFrame').contentWindow.postMessage('updater|outdatedversion|v' + bmxversion, '*');
     }
   }
 }
 
 //In-Tab Browser
 //Replaces the entire page content with an iFrame that loads a certian webpage
-function startTabBrowser (url) {
+function startTabBrowser(url) {
   if (url == undefined) {
     document.body.innerHTML = '<iframe id="bkVCPiFrame" src="https://void.clevercarpet.repl.co" sandbox="allow-scripts allow-popups allow-same-origin" style="position: fixed; top: 0px; bottom: 0px; right: 0px; width: 100%; border: none; margin: 0; padding: 0; overflow: hidden; z-index: 999999; height: 100%;" title="Iframe Example"></iframe>'
   } else {
-    document.body.innerHTML = '<iframe id="bkVCPiFrame" src="https://void.clevercarpet.repl.co/proxy/'+url+'" sandbox="allow-scripts allow-popups allow-same-origin" style="position: fixed; top: 0px; bottom: 0px; right: 0px; width: 100%; border: none; margin: 0; padding: 0; overflow: hidden; z-index: 999999; height: 100%;" title="Iframe Example"></iframe>'
+    document.body.innerHTML = '<iframe id="bkVCPiFrame" src="https://void.clevercarpet.repl.co/proxy/' + url + '" sandbox="allow-scripts allow-popups allow-same-origin" style="position: fixed; top: 0px; bottom: 0px; right: 0px; width: 100%; border: none; margin: 0; padding: 0; overflow: hidden; z-index: 999999; height: 100%;" title="Iframe Example"></iframe>'
   }
 }
 
 //Edit Mode
 //Enables page content editing and allows the user to change the text on the page without the inspect tool
-function editMode () {
+function editMode() {
   if (document.body.contentEditable == 'true') {
-    document.body.contentEditable = 'false'; document.designMode = 'off'; void 
-    document.getElementById('bkVCPiFrame').contentWindow.postMessage('trick|editmode|false', '*');
+    document.body.contentEditable = 'false'; document.designMode = 'off'; void
+      document.getElementById('bkVCPiFrame').contentWindow.postMessage('trick|editmode|false', '*');
   } else {
     document.body.contentEditable = 'true'; document.designMode = 'on'; void 0
     document.getElementById('bkVCPiFrame').contentWindow.postMessage('trick|editmode|true', '*');
@@ -56,7 +56,7 @@ function editMode () {
 
 //Dev console
 //Pulls up a custom javascript console that allows users to debug a webpage without inspect tool access
-function startDevConsole () {
+function startDevConsole() {
   (function () {
     var x = document.createElement("script");
     x.src = "https://cdn.jsdelivr.net/gh/SnowLord7/devconsole@master/main.js";
@@ -65,9 +65,21 @@ function startDevConsole () {
   })()
 }
 
+//History Flooder
+//Floods history with instances of the current website
+function floodHistory(num) {
+  done = false; x = window.location.href;
+  for (var i = 1; i <= num; i++) {
+    history.pushState(0, 0, i == num ? x : i.toString()); if (i == num) { done = true }
+  }
+  if (done === true) {
+    document.getElementById('bkVCPiFrame').contentWindow.postMessage('flooder|success|' + num, '*');
+  }
+}
+
 window.onmessage = function (e) {
   let command = e.data.split('|')
-   if (command[0] == 'updater') {
+  if (command[0] == 'updater') {
     if (command[1] == 'open') {
       window.open('https://bookmarkley.carbondev.cf/documentation#section1-1', '_blank');
     }
@@ -87,13 +99,15 @@ window.onmessage = function (e) {
     }
   } else if (command[0] == 'rqdata') {
     if (command[1] == 'tabtitle') {
-      document.getElementById('bkVCPiFrame').contentWindow.postMessage('rqdata|tabtitle|'+document.title, '*');
+      document.getElementById('bkVCPiFrame').contentWindow.postMessage('rqdata|tabtitle|' + document.title, '*');
     } else if (command[1] == 'taburl') {
       document.getElementById('bkVCPiFrame').contentWindow.postMessage('rqdata|taburl|' + document.location, '*');
     }
+  } else if (command[0] == 'flooder') {
+    floodHistory(command[1])
   } else if (command[0] == 'game') {
     if (command[1] == 'start') {
-      
+
     }
   } else if (command[0] == 'option') {
     if (command[1] == 'exit') {
