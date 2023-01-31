@@ -1,1 +1,0 @@
-javascript: (function () { var script = document.createElement('script'); script.src = 'https://raw.githubusercontent.com/CleverCarpet/Bookmarkley/main/script.js'; document.body.appendChild(script); }())
