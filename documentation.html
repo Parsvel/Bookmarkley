@@ -255,6 +255,12 @@
                                 </label>
                             </div>
                             <div style="margin-top:6px;margin-bottom:6px;" class="form-check">
+                                <input class="form-check-input" type="checkbox" value="" id="bkvanced">
+                                <label class="form-check-label" for="bkvanced">
+                                    Vanced Bookmarkley (Use Proxy)
+                                </label>
+                            </div>
+                            <div style="margin-top:6px;margin-bottom:6px;" class="form-check">
                                 <input class="form-check-input" type="checkbox" value="" id="bktelem">
                                 <label class="form-check-label" for="bktelem">
                                     Opt out of <a href="#section2-2">Telemetry</a>
@@ -294,6 +300,11 @@
                                         newurl.searchParams.append('bktelem', 'false');
                                     } else {
                                         newurl.searchParams.append('bktelem', 'true');
+                                    }
+                                    if (document.getElementById('bkvanced').checked == true) {
+                                        newurl.searchParams.append('bkvanced', 'false');
+                                    } else {
+                                        newurl.searchParams.append('bkvanced', 'true');
                                     }
                                     newurl.searchParams.append('bkChannel', document.getElementById('bkChannel').value);
                                     document.getElementById('customURLInput').value = "javascript:(function () { var script = document.createElement('script'); script.src = '" + newurl + "'; document.body.appendChild(script); }())"
