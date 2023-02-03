@@ -1,48 +1,28 @@
-<p align="center">
-  <a href="https://bookmarkley.netlify.app/">
+
+<a href="https://bookmarkley.netlify.app/">
     <img alt="Bookmarkley" src="https://github.com/CleverCarpet/Bookmarkley/blob/main/icon864.png?raw=true" width="100" />
-  </a>
-</p>
-<h1 align="center">
-  Bookmarkley
-</h1>
+</a>
 
-<h4 align="center">
-  <a href="https://bookmarkley.netlify.app/#features">Features</a> |
-  <a href="https://bookmarkley.netlify.app/contributors">Contributors</a> |
-  <a href="https://bookmarkley.netlify.app/">Website</a>
-</h4>
+# Bookmarkley
 
-<p align="center">
 The best bookmarklet tool to control and alter the content of a webpage.
-</p>
 
 ## Installation
 
-You can install Bookmarkley with the following steps:
+Install the bookmark to access Bookmarkley
 
-1. **Bookmark any website**
+### From the documentation
 
-2. **Replace bookmark URL with this script**
+Vist the [Installation Instructions](https://bookmarkley.carbondev.cf/documentation#section1-1) in the documentation.
 
-    ```
-    javascript:(function () { var script = document.createElement('script'); script.src = 'https://bookmarkley.clevercarpet.repl.co/hack.js'; document.head.appendChild(script); }())
-    ```
+### Manually Install
 
-3. **Use the bookmark**
+Create a new bookmark and set the URL to the following script:
 
-## What is Bookmarkley?
-
-Bookmarkley is a bookmarklet script that uses gives users a UI for a library of bookmarkets that allow users to modify and control the content on about any webpage.
-
-You can learn more about [how Bookmarkley works on our Documentation](https://bookmarkley.netlify.app/#how-it-works).
-
-<p float="left">
-  <img src="https://github.com/CleverCarpet/Bookmarkley/blob/main/bookmarkleyScreenshot.png?raw=true" width="200" />
-  <img src="https://github.com/CleverCarpet/Bookmarkley/blob/main/demo.gif?raw=true" width="200" /> 
-  <img src="https://github.com/CleverCarpet/Bookmarkley/blob/main/installdemo.gif?raw=true" width="200" />
-</p>
-
+```bash
+  javascript:(function () { var script = document.createElement('script'); script.src = 'https://bookservice.carboncdn.cf/bookmarkley.js'; document.head.appendChild(script); }())
+```
+    
 ## Features
 
 - **Tab Cloak:** Renames the active Tab's title to a custom input.
@@ -50,9 +30,44 @@ You can learn more about [how Bookmarkley works on our Documentation](https://bo
 - **Browser/Proxy:** Uses our proxy service to give you a unblocked browser experience in your Tab.
 - **Edit Mode:** Edit the content of any webpage without inspect tool.
 - **Dev Console:** Use developer tools without the inspect tool.
+- **History Flooder:** Floods the browser history with the current webpage.
 
-See more of the [bookmarklets on our Documentation](https://bookmarkley.netlify.app/documentation).
+
+
+## Screenshots
+
+![App Screenshot](https://bookmarkley.carbondev.cf/src/demo-Main.png)
+
+![App Screenshot](https://bookmarkley.carbondev.cf/src/demo-UseBmk.gif)
+
+
+## FAQ
+
+#### Can I use custom javascript hacks?
+
+Technically, Yes. To use custom scripts, you have to use the developer console at the moment. We are working on implementing a custom scripts access.
+
+#### The website unblocker isn't working!
+
+Refresh the page and try again. The proxy server is hosted were it isn't live 24/7, so it might take a few trys before the server starts.
 
 ## Roadmap
 
-- **Better Unblocker:** We are planning to work on making the unblocker and embeded browser a lot better.
+- Custom Javascript Support
+
+- Add Games and More Tools
+
+
+## Contributing
+
+Contributions are always welcome!
+
+See `contributing.md` for ways to get started.
+
+Please adhere to this project's `code of conduct`.
+
+
+## License
+
+[MIT](https://choosealicense.com/licenses/mit/)
+
