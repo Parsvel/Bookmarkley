@@ -36,9 +36,7 @@ Create a new bookmark and set the URL to the following script:
 
 ## Screenshots
 
-<img alt="Bookmarkley Screenshot" src="https://bookmarkley.carbondev.cf/src/demo-Main.png" width="200" />
-
-<img alt="Bookmarkley Screenshot" src="https://bookmarkley.carbondev.cf/src/demo-UseBmk.gif" width="200"  style="float:right;"/>
+<img alt="Bookmarkley Screenshot" src="https://bookmarkley.carbondev.cf/src/demo-UseBmk.gif" width="400" />
 
 
 ## FAQ
